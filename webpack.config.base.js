@@ -19,6 +19,10 @@ export default {
           cacheDirectory: true
         }
       }
+    },
+    {
+      test: /\.tsx?$/,
+      loader: 'awesome-typescript-loader'
     }]
   },
 
@@ -33,7 +37,7 @@ export default {
    * Determine the array of extensions that should be used to resolve modules.
    */
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.tsx', '.json'],
     modules: [
       path.join(__dirname, 'app'),
       'node_modules',

@@ -1,4 +1,3 @@
-// @flow
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Login.global.css';
@@ -14,7 +13,7 @@ export default class Home extends Component {
           </div>
           <h3 className="font-size-24">Welcome back</h3>
           <p>Please enter your login details below.</p>
-          <form method="post" action="login-v2.html">
+          <form method="post" action="">
             <div className="form-group">
               <label className="sr-only" htmlFor="inputEmail">Username</label>
               <input type="email" className="form-control" id="inputEmail" name="email" placeholder="Username" />
@@ -26,7 +25,7 @@ export default class Home extends Component {
                 placeholder="Password"
               />
             </div>
-            <button type="submit" className="btn btn-primary btn-block">Sign in</button>
+            <button className="btn btn-primary btn-block">Sign in</button>
           </form>
           <footer className="page-copyright">
             <div className="panel panel-bordered panel-dark">
