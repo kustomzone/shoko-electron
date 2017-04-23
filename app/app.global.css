@@ -1,6 +1,8 @@
-@import "~bootstrap/dist/css/bootstrap.css";
-@import "~font-awesome/css/font-awesome.css";
-@import "../resources/css/animsition.global.css";
+@import "../resources/css/bootstrap.global.css";
+@import "../resources/css/bootstrap-extend.global.css";
+@import "../resources/css/slidePanel.global.css";
+@import "../resources/css/jquery-mmenu.global.css";
+@import "../resources/css/web-icons.global.css";
 
 .site-navbar {
   background-color: #62a8ea;
@@ -32,7 +34,7 @@
 }
 
 .site-navbar .navbar-header .navbar-brand-logo {
-  height: 22px;
+  height: 65px;
   -webkit-transition: height .25s;
   -o-transition: height .25s;
   transition: height .25s;
@@ -1372,7 +1374,7 @@ body.layout-full {
 }
 
 .site-menubar-fold.site-menubar-hover .site-navbar .navbar-brand-logo {
-  height: 26px;
+  height: 65px;
 }
 
 .site-menubar-fold.site-menubar-hover .site-navbar .navbar-brand-text {
@@ -1657,7 +1659,7 @@ body.site-navbar-small {
 
 .site-navbar-small .site-navbar .navbar-brand {
   height: 4.286rem;
-  padding: 1.357rem 1.429rem;
+  padding: 0;
 }
 
 .site-navbar-small .site-navbar .navbar-nav {

@@ -4,13 +4,13 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Switch, Route } from 'react-router';
 import App from './containers/App';
 import LoginPage from './containers/LoginPage';
-import CounterPage from './containers/CounterPage';
+import HomePage from './containers/HomePage';
 
 export default () => (
   <Router>
     <App>
       <Switch>
-        <Route path="/counter" component={CounterPage} />
+        <Route path="/home" component={HomePage} />
         <Route path="/" component={LoginPage} />
       </Switch>
     </App>

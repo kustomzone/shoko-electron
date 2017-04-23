@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Login.global.css';
+import './Login.global.css';
 
 export default class Home extends Component {
   render() {
@@ -9,12 +9,12 @@ export default class Home extends Component {
       <div className="page-content">
         <div className="page-login-main animation-slide-right animation-duration-1">
           <div className="app-info">
-            <h3 className="font-size-24">SHOKO DESKTOP</h3>
+            <div className="font-size-24">SHOKO DESKTOP</div>
             Version 4.0.0.1
           </div>
           <h3 className="font-size-24">Welcome back</h3>
           <p>Please enter your login details below.</p>
-          <form method="post" action="login-v2.html">
+          <form method="post" action="">
             <div className="form-group">
               <label className="sr-only" htmlFor="inputEmail">Username</label>
               <input type="email" className="form-control" id="inputEmail" name="email" placeholder="Username" />
@@ -26,7 +26,7 @@ export default class Home extends Component {
                 placeholder="Password"
               />
             </div>
-            <button type="submit" className="btn btn-primary btn-block">Sign in</button>
+            <Link to="/home"><button className="btn btn-primary btn-block">Sign in</button></Link>
           </form>
           <footer className="page-copyright">
             <div className="panel panel-bordered panel-dark">

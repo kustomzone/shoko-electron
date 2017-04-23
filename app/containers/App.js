@@ -8,10 +8,6 @@ export default class App extends Component {
   };
 
   render() {
-    return (
-      <div className="page">
-        {this.props.children}
-      </div>
-    );
+    return React.Children.only(this.props.children);
   }
 }
