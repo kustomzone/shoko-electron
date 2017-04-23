@@ -1,8 +1,15 @@
+// @flow
 import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/counter';
 
-export interface Action { type: string; }
+export type counterStateType = {
+  counter: number
+};
 
-export default function counter(state: number = 0, action: Action) {
+type actionType = {
+  type: string
+};
+
+export default function counter(state: number = 0, action: actionType) {
   switch (action.type) {
     case INCREMENT_COUNTER:
       return state + 1;
