@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <title>Shoko Desktop Electron!</title>
   </head>
-  <body id="root">
-    <% if (htmlWebpackPlugin.options.dll) { %>
+  <body>
+  <div style="height: 100vh;" id="root"></div>
+  <% if (htmlWebpackPlugin.options.dll) { %>
     <script src="<%= htmlWebpackPlugin.options.dll %>"></script>
     <% } %>
   </body>

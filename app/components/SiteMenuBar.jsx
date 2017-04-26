@@ -1,7 +1,9 @@
 // @flow
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-export default class SideMenuBar extends Component {
+class SiteMenuBar extends Component {
   static handleMouseOver() {
     if (document && document.body) {
       document.body.classList.toggle('site-menubar-hover', true);
@@ -15,8 +17,12 @@ export default class SideMenuBar extends Component {
   }
 
   render() {
+    const hash = this.props.router.location.hash;
+    const classNormal = 'site-menu-item has-sub';
+    const classActive = 'site-menu-item has-sub open active';
+
     return (
-      <div onMouseOver={SideMenuBar.handleMouseOver} onMouseOut={SideMenuBar.handleMouseOut} className="site-menubar mm-menu mm-hasnavbar-bottom-1">
+      <div onMouseOver={SiteMenuBar.handleMouseOver} onMouseOut={SiteMenuBar.handleMouseOut} className="site-menubar mm-menu mm-hasnavbar-bottom-1">
         <div className="mm-navbar mm-navbar-bottom mm-navbar-bottom-1 mm-navbar-size-1">
           <div className="site-menubar-footer">
             <a href="" className="fold-show" data-placement="top" data-toggle="tooltip" data-original-title="Settings">
@@ -34,93 +40,19 @@ export default class SideMenuBar extends Component {
           <div className="mm-panel mm-hasnavbar mm-opened mm-current scrollable-container" id="mm-0">
             <div className="mm-navbar scrollable-content"><a className="mm-title">Menu</a></div>
             <ul className="site-menu mm-listview scrollable-content">
-              <li className="site-menu-item has-sub">
-                <a className="mm-next" href="#mm-1" data-target="#mm-1" />
-                <a href="">
+              <li className={hash === '#/home' ? classActive : classNormal}>
+                <Link to="/home">
                   <i className="site-menu-icon wb-dashboard" aria-hidden="true" />
                   <span className="site-menu-title">Dashboard</span>
                   <span className="site-menu-arrow" />
-                </a>
+                </Link>
               </li>
-              <li className="site-menu-item has-sub">
-                <a className="mm-next" href="#mm-2" data-target="#mm-2" />
-                <a href="">
+              <li className={hash === '#/series' ? classActive : classNormal}>
+                <Link to="/series">
                   <i className="site-menu-icon wb-layout" aria-hidden="true" />
-                  <span className="site-menu-title">Layouts</span>
+                  <span className="site-menu-title">Series</span>
                   <span className="site-menu-arrow" />
-                </a>
-              </li>
-              <li className="site-menu-item has-sub active open">
-                <a className="mm-next" href="#mm-4" data-target="#mm-4" />
-                <a href="">
-                  <i className="site-menu-icon wb-file" aria-hidden="true" />
-                  <span className="site-menu-title">Pages</span>
-                  <span className="site-menu-arrow" />
-                </a>
-              </li>
-              <li className="site-menu-item has-sub">
-                <a className="mm-next" href="#mm-8" data-target="#mm-8" />
-                  <a href="">
-                    <i className="site-menu-icon wb-bookmark" aria-hidden="true" />
-                    <span className="site-menu-title">Basic UI</span>
-                    <span className="site-menu-arrow" />
-                  </a>
-              </li>
-              <li className="site-menu-item has-sub">
-                <a className="mm-next" href="#mm-10" data-target="#mm-10" /><a href="">
-                <i className="site-menu-icon wb-hammer" aria-hidden="true" />
-                <span className="site-menu-title">Advanced UI</span>
-                <span className="site-menu-arrow" />
-              </a>
-
-              </li>
-              <li className="site-menu-item has-sub">
-                <a className="mm-next" href="#mm-11" data-target="#mm-11" /><a href="">
-                <i className="site-menu-icon wb-plugin" aria-hidden="true" />
-                <span className="site-menu-title">Structure</span>
-                <span className="site-menu-arrow" />
-              </a>
-
-              </li>
-              <li className="site-menu-item has-sub">
-                <a className="mm-next" href="#mm-12" data-target="#mm-12" /><a href="">
-                <i className="site-menu-icon wb-extension" aria-hidden="true" />
-                <span className="site-menu-title">Widgets</span>
-                <span className="site-menu-arrow" />
-              </a>
-
-              </li>
-              <li className="site-menu-item has-sub">
-                <a className="mm-next" href="#mm-13" data-target="#mm-13" /><a href="">
-                <i className="site-menu-icon wb-library" aria-hidden="true" />
-                <span className="site-menu-title">Forms</span>
-                <span className="site-menu-arrow" />
-              </a>
-
-              </li>
-              <li className="site-menu-item has-sub">
-                <a className="mm-next" href="#mm-15" data-target="#mm-15" /><a href="">
-                <i className="site-menu-icon wb-table" aria-hidden="true" />
-                <span className="site-menu-title">Tables</span>
-                <span className="site-menu-arrow" />
-              </a>
-
-              </li>
-              <li className="site-menu-item has-sub">
-                <a className="mm-next" href="#mm-16" data-target="#mm-16" /><a href="">
-                <i className="site-menu-icon wb-pie-chart" aria-hidden="true" />
-                <span className="site-menu-title">Chart</span>
-                <span className="site-menu-arrow" />
-              </a>
-
-              </li>
-              <li className="site-menu-item has-sub">
-                <a className="mm-next" href="#mm-17" data-target="#mm-17" /><a href="">
-                <i className="site-menu-icon wb-grid-4" aria-hidden="true" />
-                <span className="site-menu-title">Apps</span>
-                <span className="site-menu-arrow" />
-              </a>
-
+                </Link>
               </li>
             </ul>
           </div>
@@ -1174,3 +1106,11 @@ export default class SideMenuBar extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    router: state.router
+  };
+}
+
+export default connect(mapStateToProps)(SiteMenuBar);

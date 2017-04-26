@@ -35,6 +35,7 @@
 
 .site-navbar .navbar-header .navbar-brand-logo {
   height: 65px;
+  margin: 0;
   -webkit-transition: height .25s;
   -o-transition: height .25s;
   transition: height .25s;
@@ -1543,7 +1544,7 @@ body.layout-full {
 }
 
 .site-menubar-unfold .site-navbar .navbar-brand-logo {
-  height: 26px;
+  height: 65px;
 }
 
 .site-menubar-unfold .site-navbar .navbar-brand-text {
@@ -1653,12 +1654,12 @@ body.site-navbar-small {
 }
 
 .site-navbar-small .site-navbar {
-  height: 4.286rem;
-  min-height: 4.286rem;
+  height: 65px;
+  min-height: 65px;
 }
 
 .site-navbar-small .site-navbar .navbar-brand {
-  height: 4.286rem;
+  height: 65px;
   padding: 0;
 }
 

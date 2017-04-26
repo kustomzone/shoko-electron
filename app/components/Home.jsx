@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import './Home.global.css';
-import SideMenuBar from './SiteMenuBar';
+import SiteMenuBar from './SiteMenuBar';
 import SiteNavbar from './SiteNavbar';
 
 export default class Home extends Component {
@@ -9,7 +9,7 @@ export default class Home extends Component {
     return (
       <div style={{ height: '100vh' }}>
         <SiteNavbar />
-        <SideMenuBar />
+        <SiteMenuBar />
         <div className="site-gridmenu">
           <div>
             <div>
