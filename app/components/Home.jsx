@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './Home.global.css';
 import SiteMenuBar from './SiteMenuBar';
 import SiteNavbar from './SiteNavbar';
+import Player from './Player';
 
 export default class Home extends Component {
   render() {
@@ -124,24 +125,25 @@ export default class Home extends Component {
                             <table className="table">
                               <thead />
                               <tbody>
-                              <tr>
-                                <td>File 1</td>
-                                <td>123 MB</td>
-                                <td>
-                                  <span className="badge badge-danger">admin</span>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>File 2</td>
-                                <td>234 MB</td>
-                                <td>
-                                  <span className="badge badge-info">admin</span>
-                                </td>
-                              </tr>
+                                <tr>
+                                  <td>File 1</td>
+                                  <td>123 MB</td>
+                                  <td>
+                                    <span className="badge badge-danger">admin</span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>File 2</td>
+                                  <td>234 MB</td>
+                                  <td>
+                                    <span className="badge badge-info">admin</span>
+                                  </td>
+                                </tr>
                               </tbody>
                             </table>
                           </div>
                         </div>
+                        <Player />
                       </div>
                     </div>
                   </div>
