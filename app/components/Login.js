@@ -22,7 +22,10 @@ export default class Home extends Component {
             <div className="form-group">
               <label className="sr-only" htmlFor="inputPassword">Password</label>
               <input
-                type="password" className="form-control" id="inputPassword" name="password"
+                type="password"
+                className="form-control"
+                id="inputPassword"
+                name="password"
                 placeholder="Password"
               />
             </div>
