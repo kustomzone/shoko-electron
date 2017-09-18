@@ -1,14 +1,13 @@
 {
   "name": "shoko-electron",
-  "author": "Shoko",
-  "productName": "shoko-electron",
-  "version": "1.0.0",
-  "description": "Shoko Electron",
-  "main": "./main.js",
+  "productName": "Shoko",
+  "version": "0.1.0",
+  "description": "Shoko electron",
+  "main": "./main.prod.js",
   "scripts": {
-    "postinstall": "npm rebuild --runtime=electron --target=1.6.1 --disturl=https://atom.io/download/atom-shell --build-from-source"
+    "electron-rebuild": "../node_modules/.bin/electron-rebuild --parallel --force --types prod,dev,optional --module-dir .",
+    "postinstall": "npm run electron-rebuild"
   },
   "license": "MIT",
-  "dependencies": {
-  }
+  "dependencies": {}
 }
