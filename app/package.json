@@ -4,9 +4,9 @@
   "productName": "shoko-electron",
   "version": "1.0.0",
   "description": "Shoko Electron",
-  "main": "./main.js",
+  "main": "./main.prod.js",
   "scripts": {
-    "postinstall": "npm rebuild --runtime=electron --target=1.6.1 --disturl=https://atom.io/download/atom-shell --build-from-source"
+    "postinstall": "npm rebuild --runtime=electron --target=1.6.6 --disturl=https://atom.io/download/atom-shell --build-from-source"
   },
   "license": "MIT",
   "dependencies": {
