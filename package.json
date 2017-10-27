@@ -173,7 +173,6 @@
     "devtron": "^1.4.0",
     "electron-debug": "^1.2.0",
     "electron-fetch": "^1.1.0",
-    "es6-promise": "^4.1.1",
     "font-awesome": "^4.7.0",
     "history": "^4.6.3",
     "isomorphic-fetch": "^2.2.1",
@@ -190,7 +189,8 @@
     "redux-actions": "^2.2.1",
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.2.0",
-    "source-map-support": "^0.4.15"
+    "source-map-support": "^0.4.15",
+    "uglifyjs-webpack-plugin": "^1.0.1"
   },
   "devEngines": {
     "node": ">=7.x",
