@@ -1,0 +1,5 @@
+export default {
+  GET_GROUPS: 'EVENT_GET_GROUPS',
+  API_SET_VALUE: 'EVENT_API_SET_VALUE',
+  LOGIN: 'EVENT_LOGIN',
+};
