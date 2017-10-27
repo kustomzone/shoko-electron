@@ -5,12 +5,14 @@ import App from './containers/App';
 import LoginPage from './containers/LoginPage';
 import HomePage from './containers/HomePage';
 import SeriesPage from './containers/SeriesPage';
+import GroupsPage from './containers/GroupsPage';
 
 export default () => (
   <App>
     <Switch>
       <Route exact path="/home" component={HomePage} />
       <Route exact path="/series" component={SeriesPage} />
+      <Route exact path="/groups" component={GroupsPage} />
       <Route exact path="/" component={LoginPage} />
     </Switch>
   </App>

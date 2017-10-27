@@ -54,6 +54,13 @@ class SiteMenuBar extends Component {
                   <span className="site-menu-arrow" />
                 </Link>
               </li>
+              <li className={hash === '#/groups' ? classActive : classNormal}>
+                <Link to="/groups">
+                  <i className="site-menu-icon wb-layout" aria-hidden="true" />
+                  <span className="site-menu-title">Groups</span>
+                  <span className="site-menu-arrow" />
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="mm-panel mm-hasnavbar mm-hidden scrollable-container" id="mm-1">

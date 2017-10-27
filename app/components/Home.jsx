@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './Home.global.css';
 import SiteMenuBar from './SiteMenuBar';
 import SiteNavbar from './SiteNavbar';
-import Player from './Player';
 
 export default class Home extends Component {
   render() {
@@ -143,7 +142,6 @@ export default class Home extends Component {
                             </table>
                           </div>
                         </div>
-                        <Player />
                       </div>
                     </div>
                   </div>

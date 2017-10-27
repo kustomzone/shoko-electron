@@ -1,10 +1,21 @@
 // @flow
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import './Login.global.css';
+import Events from '../events';
 
-export default class Home extends Component {
+class Login extends Component {
+  static propTypes = {
+    setValue: PropTypes.func.isRequired,
+    login: PropTypes.func.isRequired,
+    api: PropTypes.object.isRequired,
+  };
+
   render() {
+    const { setValue, login, api } = this.props;
+    const { user, password } = api;
+
     return (
       <div className="page-content">
         <div className="page-login-main animation-slide-right animation-duration-1">
@@ -17,16 +28,25 @@ export default class Home extends Component {
           <form method="post" action="">
             <div className="form-group">
               <label className="sr-only" htmlFor="inputEmail">Username</label>
-              <input type="email" className="form-control" id="inputEmail" name="email" placeholder="Username" />
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Username"
+                value={user}
+                onChange={(e) => { setValue('user', e.target.value); }}
+              />
             </div>
             <div className="form-group">
               <label className="sr-only" htmlFor="inputPassword">Password</label>
               <input
-                type="password" className="form-control" id="inputPassword" name="password"
+                type="password"
+                className="form-control"
                 placeholder="Password"
+                value={password}
+                onChange={(e) => { setValue('password', e.target.value); }}
               />
             </div>
-            <Link to="/home"><button className="btn btn-primary btn-block">Sign in</button></Link>
+            <button type="button" className="btn btn-primary btn-block" onClick={login}>Sign in</button>
           </form>
           <footer className="page-copyright">
             <div className="panel panel-bordered panel-dark">
@@ -41,3 +61,22 @@ export default class Home extends Component {
     );
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    setValue: (field, value) => {
+      dispatch({ type: Events.API_SET_VALUE, payload: { field, value } });
+    },
+    login: () => { dispatch({ type: Events.LOGIN }); }
+  };
+}
+
+function mapStateToProps(state) {
+  const { api } = state;
+
+  return {
+    api,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

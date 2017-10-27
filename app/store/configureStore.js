@@ -1,6 +1,15 @@
 // @flow
+let storeConfig;
 if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./configureStore.prod'); // eslint-disable-line global-require
+  storeConfig = require('./configureStore.prod'); // eslint-disable-line global-require
 } else {
-  module.exports = require('./configureStore.dev'); // eslint-disable-line global-require
+  storeConfig = require('./configureStore.dev'); // eslint-disable-line global-require
 }
+const store = storeConfig.configureStore();
+
+const configuredStore = {
+  store,
+  history: storeConfig.history,
+};
+
+module.exports = configuredStore;
