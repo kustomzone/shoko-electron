@@ -1,12 +1,21 @@
 // @flow
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Events from '../events';
 import logoImage from '../images/logo.png';
+import closeWindowIcon from '../icons/16-Window-Close.png';
 
-export default class SiteNavbar extends Component {
+class SiteNavbar extends Component {
+  static propTypes = {
+    closeWindow: PropTypes.func.isRequired,
+  };
+
   render() {
+    const { closeWindow } = this.props;
+
     return (
       <nav className="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
-
         <div className="navbar-header">
           <button type="button" className="navbar-toggler hamburger hamburger-close navbar-toggler-left hided" data-toggle="menubar">
             <span className="sr-only">Toggle navigation</span>
@@ -396,9 +405,9 @@ export default class SiteNavbar extends Component {
                   </div>
                 </div>
               </li>
-              <li className="nav-item" id="toggleChat">
-                <a className="nav-link" data-toggle="site-sidebar" href="" title="Chat" data-url="../site-sidebar.tpl">
-                  <i className="icon wb-chat" aria-hidden="true" />
+              <li className="nav-item">
+                <a className="nav-link" role="button" onClick={closeWindow} href="">
+                  <img src={closeWindowIcon} alt="Close" />
                 </a>
               </li>
             </ul>
@@ -419,3 +428,15 @@ export default class SiteNavbar extends Component {
     );
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    closeWindow: () => { dispatch({ type: Events.EXIT }); },
+  };
+}
+
+function mapStateToProps(state) {
+  return {};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SiteNavbar);

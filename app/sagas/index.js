@@ -41,10 +41,15 @@ function* getGroups() {
   }
 }
 
+function* Exit() {
+  yield window.close();
+}
+
 export default function* rootSaga() {
   yield [
     takeEvery(Events.GET_GROUPS, getGroups),
     takeEvery(Events.LOGIN, Login),
     takeEvery(Events.API_SET_VALUE, apiSetValue),
+    takeEvery(Events.EXIT, Exit),
   ];
 }

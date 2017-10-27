@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { connect } from 'react-redux';
 
-import './Series.global.css';
+import './Groups.global.css';
 import SiteMenuBar from './SiteMenuBar';
 import SiteNavbar from './SiteNavbar';
 import Events from '../events/index';
@@ -27,9 +27,9 @@ class Groups extends Component {
       <div style={{ height: '100vh', position: 'relative' }}>
         <SiteNavbar />
         <SiteMenuBar />
-        <div className="page page-series">
+        <div className="page page-groups">
           <PerfectScrollbar>
-            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+            <div className="groups-container">
               {groups.map((group) => (<Group group={group} />))}
             </div>
           </PerfectScrollbar>
